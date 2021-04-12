@@ -6,6 +6,11 @@ export interface Options {
     showLabels: boolean;
     showTitle: boolean;
     title: string;
+    title1: string;
+    title2: string;
+    title3: string;
+    title4: string;
+    title5: string;
     useBom: boolean;
     headers: string[];
     noDownload: boolean;
@@ -23,6 +28,11 @@ export class CsvConfigConsts {
     public static DEFAULT_QUOTE = '"';
     public static DEFAULT_SHOW_TITLE = false;
     public static DEFAULT_TITLE = 'My Report';
+    public static DEFAULT_TITLE1 = '';
+    public static DEFAULT_TITLE2 = '';
+    public static DEFAULT_TITLE3 = '';
+    public static DEFAULT_TITLE4 = '';
+    public static DEFAULT_TITLE5 = '';
     public static DEFAULT_FILENAME = 'mycsv.csv';
     public static DEFAULT_SHOW_LABELS = false;
     public static DEFAULT_USE_BOM = true;
@@ -41,6 +51,11 @@ export const ConfigDefaults: Options = {
     showLabels: CsvConfigConsts.DEFAULT_SHOW_LABELS,
     showTitle: CsvConfigConsts.DEFAULT_SHOW_TITLE,
     title: CsvConfigConsts.DEFAULT_TITLE,
+    title1: CsvConfigConsts.DEFAULT_TITLE1,
+    title2: CsvConfigConsts.DEFAULT_TITLE2,
+    title3: CsvConfigConsts.DEFAULT_TITLE3,
+    title4: CsvConfigConsts.DEFAULT_TITLE4,
+    title5: CsvConfigConsts.DEFAULT_TITLE5,
     useBom: CsvConfigConsts.DEFAULT_USE_BOM,
     headers: CsvConfigConsts.DEFAULT_HEADER,
     useHeader: CsvConfigConsts.DEFAULT_USE_HEADER,
@@ -81,6 +96,23 @@ export class AngularCsv {
 
         if (this._options.showTitle) {
             this.csv += this._options.title + '\r\n\n';
+            if(this._options.title1!=''){
+                this.csv += this._options.title1 + '\r';
+                }
+                if(this._options.title2!=''){
+                this.csv += this._options.title2 + '\r';
+                }
+                if(this._options.title3!=''){
+                this.csv += this._options.title3 + '\r';
+                }
+                if(this._options.title4!=''){
+                this.csv += this._options.title4 + '\r';
+                }
+                if(this._options.title5!=''){
+                this.csv += this._options.title5 + '\r';
+                }
+            this.csv += '\n\n';
+
         }
 
         this.getHeaders();
